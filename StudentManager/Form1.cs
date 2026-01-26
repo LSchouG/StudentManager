@@ -1,8 +1,8 @@
 namespace StudentManager
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             customizeDesign();
@@ -66,23 +66,28 @@ namespace StudentManager
 
 
         // Event Handlers for Buttons
+
         // Student Buttons
         private void button_student_Click(object sender, EventArgs e)
         {
             showSubMenu(panel_studentSubMenu);
         }
+        #region subMenuStudent
         private void button_registration_Click(object sender, EventArgs e)
         {
             // TODO
+            hideSubMenu();
         }
 
         private void button_manageStudent_Click(object sender, EventArgs e)
         {
             // TODO
+            hideSubMenu();
         }
         private void button_studentStatus_Click(object sender, EventArgs e)
         {
             // TODO
+            hideSubMenu();
         }
 
         private void button_StudentPrint_Click(object sender, EventArgs e)
@@ -90,45 +95,56 @@ namespace StudentManager
             // TODO
         }
 
+        #endregion
+
+
         // Course Buttons
         private void button_course_Click(object sender, EventArgs e)
         {
             showSubMenu(panel_courseSubMenu);
         }
-
+        #region subMenuCourse
         private void button_addCourse_Click(object sender, EventArgs e)
         {
             //TODO
+            hideSubMenu();
         }
 
         private void button_manageCourse_Click(object sender, EventArgs e)
         {
             //TODO
+            hideSubMenu();
         }
 
         private void button_coursePrint_Click(object sender, EventArgs e)
         {
             //TODO
+            hideSubMenu();
         }
+        #endregion
+
 
         // Score Buttons
         private void button_Score_Click(object sender, EventArgs e)
         {
             showSubMenu(panel_scoreSubMenu);
         }
-
+        #region subMenuScore
         private void button_addScore_Click(object sender, EventArgs e)
         {
             // TODO
+            hideSubMenu();
         }
         private void button_manageScore_Click(object sender, EventArgs e)
         {
             // TODO
+            hideSubMenu();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             // TODO
+            hideSubMenu();
         }
 
         // Exit Button
@@ -136,5 +152,7 @@ namespace StudentManager
         {
             // TODO
         }
+
+        #endregion
     }
 }
