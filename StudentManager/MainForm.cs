@@ -23,7 +23,8 @@ namespace StudentManager
         // Form Load Event
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            openChildForm(new CoverForm());
+            hideSubMenu();
         }
 
         private void customizeDesign()
@@ -76,6 +77,7 @@ namespace StudentManager
         private void button_registration_Click(object sender, EventArgs e)
         {
             // TODO
+            openChildForm(new RegistationForm());
             hideSubMenu();
         }
 
@@ -141,9 +143,9 @@ namespace StudentManager
             hideSubMenu();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button_dashboard_Click(object sender, EventArgs e)
         {
-            // TODO
+            openChildForm(new CoverForm());
             hideSubMenu();
         }
 
@@ -154,5 +156,22 @@ namespace StudentManager
         }
 
         #endregion
+
+        // show regitserform in mainform
+        private Form activForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activForm != null)
+                activForm.Close();
+            activForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_cover.Controls.Add(childForm);
+            panel_cover.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
     }
 }

@@ -41,7 +41,8 @@ namespace StudentManager
             if (radioButton_male.Checked)
             {
                 gender = "Male";
-            }else 
+            }
+            else
             {
                 gender = "female";
             }
@@ -63,13 +64,16 @@ namespace StudentManager
                 {
                     if (student.insertStudent(firstname, lastname, dob, phone, gender, address, img))
                     {
+                        showTable();
                         MessageBox.Show("New Student Added", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                } catch (Exception ex) 
-                {
-                        MessageBox.Show(ex.Message, "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } else
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
             {
                 MessageBox.Show("Empty Fields", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -85,7 +89,8 @@ namespace StudentManager
                 !(radioButton_female.Checked || radioButton_male.Checked))
             {
                 return false;
-            } else 
+            }
+            else
             {
                 return true;
             }
@@ -94,7 +99,46 @@ namespace StudentManager
 
         private void button_clear_Click(object sender, EventArgs e)
         {
+            textBox_firstName.Clear();
+            textBox_lastName.Clear();
+            textBox_address.Clear();
+            textBox_phoneNumber.Clear();
+            pictureBox_student.Image = null;
 
         }
+
+        private void RegistationForm_Load(object sender, EventArgs e)
+        {
+            showTable();
+
+        }
+        // Show student list in Datagridview
+        public void showTable()
+        {
+            DataTable table = student.getStudentList();
+
+            // Fix invalid image data BEFORE binding
+            foreach (DataRow row in table.Rows)
+            {
+                if (row["StdImage"] == DBNull.Value ||
+                    ((byte[])row["StdImage"]).Length == 0)
+                {
+                    row["StdImage"] = DBNull.Value;
+                }
+            }
+
+            // Set the row height to 24
+            dataGridView_student.RowTemplate.Height = 80;
+
+            dataGridView_student.AutoGenerateColumns = true;
+            dataGridView_student.DataSource = table;
+
+            if (dataGridView_student.Columns["StdImage"] is DataGridViewImageColumn imgCol)
+            {
+                imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                imgCol.DefaultCellStyle.NullValue = null;
+            }
+        }
+
     }
 }

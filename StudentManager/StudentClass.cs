@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
+using System.Data;
+
 
 namespace StudentManager
 {
@@ -9,6 +11,7 @@ namespace StudentManager
     {
         DBconnect DBconnect = new DBconnect();
 
+        // function to insert a new student
         public bool insertStudent(string firstName, string lastName, DateTime birthDate, string phone, string gender, string address, Byte[] img)
         {
             MySqlCommand command = new MySqlCommand("INSERT INTO Student (StdFirstName, StdLastName, StdBirthDay, StdGender, StdPhone, StdAddress, StdImage)" +
@@ -20,7 +23,7 @@ namespace StudentManager
             command.Parameters.Add("@ph", MySqlDbType.VarChar).Value = phone;
             command.Parameters.Add("@gen", MySqlDbType.VarChar).Value = gender;
             command.Parameters.Add("@adr", MySqlDbType.VarChar).Value = address;
-            command.Parameters.Add("@img", MySqlDbType.VarChar).Value = img;
+            command.Parameters.Add("@img", MySqlDbType.LongBlob).Value = img;
 
             DBconnect.openConnection();
 
@@ -34,5 +37,20 @@ namespace StudentManager
                 return false;
             }
         }
+
+        // function to load student from table
+        public DataTable getStudentList()
+        {
+            MySqlCommand command = new MySqlCommand( "SELECT * FROM Student",  DBconnect.getConnection );
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+
+            return table;
+        }
+
+
     }
 }
