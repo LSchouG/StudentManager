@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoverForm));
             panel4 = new Panel();
-            label13 = new Label();
             pictureBox3 = new PictureBox();
-            panel2 = new Panel();
             label_role = new Label();
-            pictureBox1 = new PictureBox();
+            label1 = new Label();
             label_user = new Label();
             label4 = new Label();
-            label1 = new Label();
+            label13 = new Label();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
             label12 = new Label();
@@ -72,17 +72,6 @@
             panel4.Size = new Size(935, 54);
             panel4.TabIndex = 10;
             // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.FromArgb(0, 71, 160);
-            label13.Location = new Point(12, 9);
-            label13.Name = "label13";
-            label13.Size = new Size(166, 15);
-            label13.TabIndex = 3;
-            label13.Text = "Mdemy Internatianal School ";
-            // 
             // pictureBox3
             // 
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -94,17 +83,6 @@
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(label13);
-            panel2.Controls.Add(pictureBox1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(935, 73);
-            panel2.TabIndex = 8;
-            // 
             // label_role
             // 
             label_role.AutoSize = true;
@@ -115,16 +93,15 @@
             label_role.TabIndex = 3;
             label_role.Text = "Admin";
             // 
-            // pictureBox1
+            // label1
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1582, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(75, 65);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(15, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Welcome :";
             // 
             // label_user
             // 
@@ -146,15 +123,38 @@
             label4.TabIndex = 1;
             label4.Text = "Role  :";
             // 
-            // label1
+            // label13
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(15, 11);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Welcome :";
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.FromArgb(0, 71, 160);
+            label13.Location = new Point(12, 9);
+            label13.Name = "label13";
+            label13.Size = new Size(166, 15);
+            label13.TabIndex = 3;
+            label13.Text = "Mdemy Internatianal School ";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(label13);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(935, 73);
+            panel2.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1582, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 65);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -305,6 +305,7 @@
             Controls.Add(panel3);
             Name = "CoverForm";
             Text = "CoverForm";
+            Load += CoverForm_Load;
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
