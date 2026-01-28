@@ -84,6 +84,7 @@ namespace StudentManager
         private void button_manageStudent_Click(object sender, EventArgs e)
         {
             // TODO
+            openChildForm(new ManageStudentForm());
             hideSubMenu();
         }
         private void button_studentStatus_Click(object sender, EventArgs e)
