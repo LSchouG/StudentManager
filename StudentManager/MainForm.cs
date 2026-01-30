@@ -83,7 +83,6 @@ namespace StudentManager
 
         private void button_manageStudent_Click(object sender, EventArgs e)
         {
-            // TODO
             openChildForm(new ManageStudentForm());
             hideSubMenu();
         }
@@ -95,7 +94,8 @@ namespace StudentManager
 
         private void button_StudentPrint_Click(object sender, EventArgs e)
         {
-            // TODO
+            openChildForm(new PrintStudent());
+            hideSubMenu();
         }
 
         #endregion
