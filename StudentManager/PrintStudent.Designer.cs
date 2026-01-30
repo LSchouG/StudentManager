@@ -1,6 +1,6 @@
 ﻿namespace StudentManager
 {
-    partial class ManageStudentForm
+    partial class PrintStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -29,36 +29,26 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
-            textBox_id = new TextBox();
-            label8 = new Label();
+            radioButton_all = new RadioButton();
+            button_print = new Button();
             button_clear_MangeStudent = new Button();
             button_delete = new Button();
             button_Update = new Button();
             button_uploadMG = new Button();
             pictureBox_studentMG = new PictureBox();
-            textBox_lastName = new TextBox();
             panel2 = new Panel();
-            label1 = new Label();
-            textBox_firstName = new TextBox();
             button_clear = new Button();
-            label2 = new Label();
             button_add = new Button();
-            label3 = new Label();
-            textBox_phoneNumber = new TextBox();
-            dateTimePicker_DOB = new DateTimePicker();
-            label6 = new Label();
             label4 = new Label();
             button_upload = new Button();
             radioButton_male = new RadioButton();
             pictureBox_student = new PictureBox();
             radioButton_female = new RadioButton();
-            textBox_address = new TextBox();
-            label5 = new Label();
             panel1 = new Panel();
             label7 = new Label();
             dataGridView_student = new DataGridView();
-            textBox_Search = new TextBox();
-            bottom_search = new Button();
+            label1 = new Label();
+            comboBox_class = new ComboBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_studentMG).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_student).BeginInit();
@@ -69,54 +59,54 @@
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel3.Controls.Add(textBox_id);
-            panel3.Controls.Add(label8);
+            panel3.Controls.Add(radioButton_all);
+            panel3.Controls.Add(button_print);
             panel3.Controls.Add(button_clear_MangeStudent);
             panel3.Controls.Add(button_delete);
             panel3.Controls.Add(button_Update);
             panel3.Controls.Add(button_uploadMG);
             panel3.Controls.Add(pictureBox_studentMG);
-            panel3.Controls.Add(textBox_lastName);
             panel3.Controls.Add(panel2);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(textBox_firstName);
             panel3.Controls.Add(button_clear);
-            panel3.Controls.Add(label2);
             panel3.Controls.Add(button_add);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(textBox_phoneNumber);
-            panel3.Controls.Add(dateTimePicker_DOB);
-            panel3.Controls.Add(label6);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(button_upload);
             panel3.Controls.Add(radioButton_male);
             panel3.Controls.Add(pictureBox_student);
             panel3.Controls.Add(radioButton_female);
-            panel3.Controls.Add(textBox_address);
-            panel3.Controls.Add(label5);
-            panel3.Location = new Point(0, 352);
+            panel3.Location = new Point(0, 562);
             panel3.Name = "panel3";
-            panel3.Size = new Size(934, 261);
-            panel3.TabIndex = 24;
+            panel3.Size = new Size(934, 51);
+            panel3.TabIndex = 31;
             // 
-            // textBox_id
+            // radioButton_all
             // 
-            textBox_id.Enabled = false;
-            textBox_id.Location = new Point(695, 178);
-            textBox_id.Name = "textBox_id";
-            textBox_id.Size = new Size(73, 23);
-            textBox_id.TabIndex = 27;
+            radioButton_all.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            radioButton_all.AutoSize = true;
+            radioButton_all.Checked = true;
+            radioButton_all.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            radioButton_all.ForeColor = Color.FromArgb(0, 71, 160);
+            radioButton_all.Location = new Point(99, 20);
+            radioButton_all.Name = "radioButton_all";
+            radioButton_all.Size = new Size(43, 20);
+            radioButton_all.TabIndex = 35;
+            radioButton_all.TabStop = true;
+            radioButton_all.Text = "All";
+            radioButton_all.UseVisualStyleBackColor = true;
+            radioButton_all.CheckedChanged += radioButton_all_CheckedChanged;
             // 
-            // label8
+            // button_print
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label8.ForeColor = Color.FromArgb(0, 71, 160);
-            label8.Location = new Point(619, 180);
-            label8.Name = "label8";
-            label8.Size = new Size(58, 18);
-            label8.TabIndex = 26;
-            label8.Text = "Id No :";
+            button_print.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_print.BackColor = Color.FromArgb(0, 71, 160);
+            button_print.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            button_print.ForeColor = Color.White;
+            button_print.Location = new Point(813, 16);
+            button_print.Name = "button_print";
+            button_print.Size = new Size(109, 28);
+            button_print.TabIndex = 34;
+            button_print.Text = "Print";
+            button_print.UseVisualStyleBackColor = false;
             // 
             // button_clear_MangeStudent
             // 
@@ -124,13 +114,12 @@
             button_clear_MangeStudent.BackColor = Color.Gray;
             button_clear_MangeStudent.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_clear_MangeStudent.ForeColor = Color.White;
-            button_clear_MangeStudent.Location = new Point(576, 221);
+            button_clear_MangeStudent.Location = new Point(1310, 172);
             button_clear_MangeStudent.Name = "button_clear_MangeStudent";
             button_clear_MangeStudent.Size = new Size(109, 28);
             button_clear_MangeStudent.TabIndex = 25;
             button_clear_MangeStudent.Text = "Clear";
             button_clear_MangeStudent.UseVisualStyleBackColor = false;
-            button_clear_MangeStudent.Click += button_clear_MangeStudent_Click;
             // 
             // button_delete
             // 
@@ -138,13 +127,12 @@
             button_delete.BackColor = Color.Red;
             button_delete.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_delete.ForeColor = Color.White;
-            button_delete.Location = new Point(688, 221);
+            button_delete.Location = new Point(1422, 172);
             button_delete.Name = "button_delete";
             button_delete.Size = new Size(109, 28);
             button_delete.TabIndex = 24;
             button_delete.Text = "Delete";
             button_delete.UseVisualStyleBackColor = false;
-            button_delete.Click += button_delete_Click;
             // 
             // button_Update
             // 
@@ -152,13 +140,12 @@
             button_Update.BackColor = Color.Green;
             button_Update.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_Update.ForeColor = Color.White;
-            button_Update.Location = new Point(803, 221);
+            button_Update.Location = new Point(1537, 172);
             button_Update.Name = "button_Update";
             button_Update.Size = new Size(109, 28);
             button_Update.TabIndex = 23;
             button_Update.Text = "Update";
             button_Update.UseVisualStyleBackColor = false;
-            button_Update.Click += button_Update_Click_1;
             // 
             // button_uploadMG
             // 
@@ -166,58 +153,32 @@
             button_uploadMG.BackColor = Color.FromArgb(0, 71, 160);
             button_uploadMG.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_uploadMG.ForeColor = Color.White;
-            button_uploadMG.Location = new Point(803, 166);
+            button_uploadMG.Location = new Point(1537, 117);
             button_uploadMG.Name = "button_uploadMG";
             button_uploadMG.Size = new Size(109, 28);
             button_uploadMG.TabIndex = 22;
             button_uploadMG.Text = "Upload";
             button_uploadMG.UseVisualStyleBackColor = false;
-            button_uploadMG.Click += button_uploadMG_Click;
             // 
             // pictureBox_studentMG
             // 
             pictureBox_studentMG.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox_studentMG.BackColor = Color.Gainsboro;
-            pictureBox_studentMG.Location = new Point(803, 31);
+            pictureBox_studentMG.Location = new Point(1537, -18);
             pictureBox_studentMG.Name = "pictureBox_studentMG";
             pictureBox_studentMG.Size = new Size(109, 121);
             pictureBox_studentMG.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_studentMG.TabIndex = 21;
             pictureBox_studentMG.TabStop = false;
             // 
-            // textBox_lastName
-            // 
-            textBox_lastName.Location = new Point(395, 29);
-            textBox_lastName.Name = "textBox_lastName";
-            textBox_lastName.Size = new Size(130, 23);
-            textBox_lastName.TabIndex = 5;
-            // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(0, 71, 160);
+            panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(933, 10);
+            panel2.Size = new Size(934, 10);
             panel2.TabIndex = 20;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(0, 71, 160);
-            label1.Location = new Point(35, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 18);
-            label1.TabIndex = 1;
-            label1.Text = "First Name :";
-            // 
-            // textBox_firstName
-            // 
-            textBox_firstName.Location = new Point(142, 29);
-            textBox_firstName.Name = "textBox_firstName";
-            textBox_firstName.Size = new Size(130, 23);
-            textBox_firstName.TabIndex = 2;
             // 
             // button_clear
             // 
@@ -225,23 +186,12 @@
             button_clear.BackColor = Color.Silver;
             button_clear.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_clear.ForeColor = Color.White;
-            button_clear.Location = new Point(1431, 380);
+            button_clear.Location = new Point(2165, 331);
             button_clear.Name = "button_clear";
             button_clear.Size = new Size(109, 28);
             button_clear.TabIndex = 18;
             button_clear.Text = "Clear";
             button_clear.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(0, 71, 160);
-            label2.Location = new Point(284, 31);
-            label2.Name = "label2";
-            label2.Size = new Size(99, 18);
-            label2.TabIndex = 4;
-            label2.Text = "Last Name :";
             // 
             // button_add
             // 
@@ -249,55 +199,20 @@
             button_add.BackColor = Color.Green;
             button_add.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_add.ForeColor = Color.White;
-            button_add.Location = new Point(1546, 380);
+            button_add.Location = new Point(2280, 331);
             button_add.Name = "button_add";
             button_add.Size = new Size(109, 28);
             button_add.TabIndex = 17;
             button_add.Text = "Add";
             button_add.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(0, 71, 160);
-            label3.Location = new Point(20, 83);
-            label3.Name = "label3";
-            label3.Size = new Size(116, 18);
-            label3.TabIndex = 6;
-            label3.Text = "Date Of Birth :";
-            // 
-            // textBox_phoneNumber
-            // 
-            textBox_phoneNumber.Location = new Point(610, 29);
-            textBox_phoneNumber.Name = "textBox_phoneNumber";
-            textBox_phoneNumber.Size = new Size(158, 23);
-            textBox_phoneNumber.TabIndex = 16;
-            // 
-            // dateTimePicker_DOB
-            // 
-            dateTimePicker_DOB.Location = new Point(142, 81);
-            dateTimePicker_DOB.Name = "dateTimePicker_DOB";
-            dateTimePicker_DOB.Size = new Size(206, 23);
-            dateTimePicker_DOB.TabIndex = 7;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(0, 71, 160);
-            label6.Location = new Point(534, 31);
-            label6.Name = "label6";
-            label6.Size = new Size(66, 18);
-            label6.TabIndex = 15;
-            label6.Text = "Phone :";
-            // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 71, 160);
-            label4.Location = new Point(547, 83);
+            label4.Location = new Point(18, 21);
             label4.Name = "label4";
             label4.Size = new Size(73, 18);
             label4.TabIndex = 8;
@@ -309,7 +224,7 @@
             button_upload.BackColor = Color.FromArgb(0, 71, 160);
             button_upload.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_upload.ForeColor = Color.White;
-            button_upload.Location = new Point(1546, 325);
+            button_upload.Location = new Point(2280, 276);
             button_upload.Name = "button_upload";
             button_upload.Size = new Size(109, 28);
             button_upload.TabIndex = 14;
@@ -318,23 +233,23 @@
             // 
             // radioButton_male
             // 
+            radioButton_male.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             radioButton_male.AutoSize = true;
-            radioButton_male.Checked = true;
             radioButton_male.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             radioButton_male.ForeColor = Color.FromArgb(0, 71, 160);
-            radioButton_male.Location = new Point(626, 83);
+            radioButton_male.Location = new Point(148, 20);
             radioButton_male.Name = "radioButton_male";
             radioButton_male.Size = new Size(59, 20);
             radioButton_male.TabIndex = 9;
-            radioButton_male.TabStop = true;
             radioButton_male.Text = "Male";
             radioButton_male.UseVisualStyleBackColor = true;
+            radioButton_male.CheckedChanged += radioButton_male_CheckedChanged;
             // 
             // pictureBox_student
             // 
             pictureBox_student.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox_student.BackColor = Color.Gainsboro;
-            pictureBox_student.Location = new Point(1546, 190);
+            pictureBox_student.Location = new Point(2280, 141);
             pictureBox_student.Name = "pictureBox_student";
             pictureBox_student.Size = new Size(109, 121);
             pictureBox_student.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -343,34 +258,17 @@
             // 
             // radioButton_female
             // 
+            radioButton_female.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             radioButton_female.AutoSize = true;
             radioButton_female.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             radioButton_female.ForeColor = Color.FromArgb(0, 71, 160);
-            radioButton_female.Location = new Point(691, 83);
+            radioButton_female.Location = new Point(213, 20);
             radioButton_female.Name = "radioButton_female";
             radioButton_female.Size = new Size(77, 20);
             radioButton_female.TabIndex = 10;
             radioButton_female.Text = "Female";
             radioButton_female.UseVisualStyleBackColor = true;
-            // 
-            // textBox_address
-            // 
-            textBox_address.Location = new Point(142, 130);
-            textBox_address.Multiline = true;
-            textBox_address.Name = "textBox_address";
-            textBox_address.Size = new Size(458, 71);
-            textBox_address.TabIndex = 12;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(0, 71, 160);
-            label5.Location = new Point(57, 132);
-            label5.Name = "label5";
-            label5.Size = new Size(79, 18);
-            label5.TabIndex = 11;
-            label5.Text = "Address :";
+            radioButton_female.CheckedChanged += radioButton_female_CheckedChanged;
             // 
             // panel1
             // 
@@ -380,7 +278,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(934, 58);
-            panel1.TabIndex = 23;
+            panel1.TabIndex = 30;
             // 
             // label7
             // 
@@ -389,9 +287,9 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(381, 9);
             label7.Name = "label7";
-            label7.Size = new Size(172, 24);
+            label7.Size = new Size(83, 24);
             label7.TabIndex = 20;
-            label7.Text = "Manage Students";
+            label7.Text = "To Print";
             // 
             // dataGridView_student
             // 
@@ -402,45 +300,42 @@
             dataGridView_student.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_student.Location = new Point(0, 90);
             dataGridView_student.Name = "dataGridView_student";
-            dataGridView_student.Size = new Size(934, 269);
-            dataGridView_student.TabIndex = 22;
-            dataGridView_student.Click += dataGridView_student_Click;
+            dataGridView_student.Size = new Size(934, 480);
+            dataGridView_student.TabIndex = 29;
             // 
-            // textBox_Search
+            // label1
             // 
-            textBox_Search.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox_Search.Location = new Point(764, 62);
-            textBox_Search.Name = "textBox_Search";
-            textBox_Search.Size = new Size(158, 23);
-            textBox_Search.TabIndex = 28;
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(0, 71, 160);
+            label1.Location = new Point(661, 66);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 18);
+            label1.TabIndex = 34;
+            label1.Text = "Select Class :";
             // 
-            // bottom_search
+            // comboBox_class
             // 
-            bottom_search.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            bottom_search.BackColor = Color.FromArgb(0, 71, 160);
-            bottom_search.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            bottom_search.ForeColor = Color.White;
-            bottom_search.Location = new Point(649, 59);
-            bottom_search.Name = "bottom_search";
-            bottom_search.Size = new Size(109, 28);
-            bottom_search.TabIndex = 28;
-            bottom_search.Text = "Search";
-            bottom_search.UseVisualStyleBackColor = false;
-            bottom_search.Click += bottom_search_Click;
+            comboBox_class.FormattingEnabled = true;
+            comboBox_class.Location = new Point(780, 64);
+            comboBox_class.Name = "comboBox_class";
+            comboBox_class.Size = new Size(142, 23);
+            comboBox_class.TabIndex = 35;
             // 
-            // ManageStudentForm
+            // PrintStudent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(934, 613);
-            Controls.Add(bottom_search);
-            Controls.Add(textBox_Search);
+            Controls.Add(comboBox_class);
+            Controls.Add(label1);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Controls.Add(dataGridView_student);
-            Name = "ManageStudentForm";
-            Text = "ManageStudentForm";
-            Load += ManageStudentForm_Load;
+            Name = "PrintStudent";
+            Text = "PrintStudent";
+            Load += PrintStudent_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_studentMG).EndInit();
@@ -453,37 +348,26 @@
         }
 
         #endregion
-
         private Panel panel3;
-        private TextBox textBox_lastName;
+        private Button button_print;
+        private Button button_clear_MangeStudent;
+        private Button button_delete;
+        private Button button_Update;
+        private Button button_uploadMG;
+        private PictureBox pictureBox_studentMG;
         private Panel panel2;
-        private Label label1;
-        private TextBox textBox_firstName;
         private Button button_clear;
-        private Label label2;
         private Button button_add;
-        private Label label3;
-        private TextBox textBox_phoneNumber;
-        private DateTimePicker dateTimePicker_DOB;
-        private Label label6;
         private Label label4;
         private Button button_upload;
         private RadioButton radioButton_male;
         private PictureBox pictureBox_student;
         private RadioButton radioButton_female;
-        private TextBox textBox_address;
-        private Label label5;
         private Panel panel1;
         private Label label7;
         private DataGridView dataGridView_student;
-        private Button button_delete;
-        private Button button_Update;
-        private Button button_uploadMG;
-        private PictureBox pictureBox_studentMG;
-        private Button button_clear_MangeStudent;
-        private TextBox textBox_id;
-        private Label label8;
-        private TextBox textBox_Search;
-        private Button bottom_search;
+        private Label label1;
+        private ComboBox comboBox_class;
+        private RadioButton radioButton_all;
     }
 }

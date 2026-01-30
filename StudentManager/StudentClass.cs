@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using MySql.Data.MySqlClient;
 using System.Data;
+using System.Drawing;
+using System.Text;
 
 
 namespace StudentManager
@@ -76,7 +78,92 @@ namespace StudentManager
         {
             return exeCount("SELECT COUNT(*) FROM Student WHERE stdGender = 'female'");
         }
+        // function to search for first name last name or adress.
+        public DataTable SearchStudent(String searchData)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Student WHERE CONCAT(`StdFirstName`,`StdLastName`,`StdAddress`) LIKE @search", DBconnect.getConnection);
+            command.Parameters.AddWithValue("@search", "%" + searchData + "%");
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
 
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        // function to insert a new student
+        public bool UpdateStudent(int id,string firstName, string lastName, DateTime birthDate, string phone, string gender, string address, Byte[] img)
+        {
+            MySqlCommand command = new MySqlCommand("UPDATE `student` SET `StdFirstName`= @fn,`StdLastName`= @ln,`StdBirthDay`= @bd,`StdGender`= @gen," +
+                                                    " `StdPhone`= @ph,`StdAddress`= @adr,`StdImage`= @img WHERE `StdId`= @id", DBconnect.getConnection);
+
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+            command.Parameters.Add("@fn", MySqlDbType.VarChar).Value = firstName;
+            command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = lastName;
+            command.Parameters.Add("@bd", MySqlDbType.Date).Value = birthDate;
+            command.Parameters.Add("@ph", MySqlDbType.VarChar).Value = phone;
+            command.Parameters.Add("@gen", MySqlDbType.VarChar).Value = gender;
+            command.Parameters.Add("@adr", MySqlDbType.VarChar).Value = address;
+            command.Parameters.Add("@img", MySqlDbType.LongBlob).Value = img;
+
+            DBconnect.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                DBconnect.closeConnection();
+                return true;
+            }
+            else
+            {
+                DBconnect.closeConnection();
+                return false;
+            }
+        }
+
+        // function to delete studen by id
+        public bool DeleteStudent(int id)
+        {
+            MySqlCommand command = new MySqlCommand("DELETE FROM `student` WHERE `StdId`= @id", DBconnect.getConnection);
+
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+            DBconnect.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                DBconnect.closeConnection();
+                return true;
+            }
+            else
+            {
+                DBconnect.closeConnection();
+                return false;
+            }
+        }
+
+        // function for any sql command in StudentDB
+        public DataTable GetList(MySqlCommand command)
+        {
+            // Assign connection if not already set
+            if (command.Connection == null) 
+            { 
+                command.Connection = DBconnect.getConnection;
+            }
+                
+
+            // Open connection if it’s closed
+            if (command.Connection.State != ConnectionState.Open)
+            { 
+                command.Connection.Open();
+            }
+                
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+
+            return table;
+        }
 
     }
 }
