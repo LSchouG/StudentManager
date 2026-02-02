@@ -6,12 +6,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using DGVPrinterHelper;
+
 
 namespace StudentManager
 {
     public partial class PrintStudent : Form
     {
         StudentClass student = new StudentClass();
+        DGVPrinter printer = new DGVPrinter();
         public PrintStudent()
         {
             InitializeComponent();
@@ -81,6 +84,49 @@ namespace StudentManager
                 command.Parameters.Add("@gender", MySqlDbType.VarChar).Value = "Female";
                 showData(command);
             }
+        }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            // CheckBox the radio button
+            String selectQuery = "";
+            if (radioButton_all.Checked)
+            {
+                selectQuery = "SELECT * FROM `student`";
+            }
+            if (radioButton_female.Checked)
+            {
+                selectQuery = "SELECT * FROM student WHERE StdGender = 'Female'";
+            }
+            if (radioButton_male.Checked)
+            {
+                selectQuery = "SELECT * FROM student WHERE StdGender = 'Male'";
+            }
+            showData(new MySqlCommand(selectQuery));
+        }
+        private void button_print_Click(object sender, EventArgs e)
+        {
+            // Hide image column (CRITICAL)
+            var imgCol = dataGridView_student.Columns["StdImage"];
+            bool wasVisible = imgCol.Visible;
+            imgCol.Visible = false;
+
+            printer.Title = "Udemy Student list";
+            printer.SubTitle = $"Date: {DateTime.Now:d}";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoWrap;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "foxlearn";
+            printer.FooterSpacing = 15;
+
+            printer.printDocument.DefaultPageSettings.Landscape = true;
+
+            printer.PrintDataGridView(dataGridView_student);
+
+            // Restore image column
+            imgCol.Visible = wasVisible;
         }
 
 

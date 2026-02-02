@@ -49,6 +49,7 @@
             dataGridView_student = new DataGridView();
             label1 = new Label();
             comboBox_class = new ComboBox();
+            button_search = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_studentMG).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_student).BeginInit();
@@ -107,6 +108,7 @@
             button_print.TabIndex = 34;
             button_print.Text = "Print";
             button_print.UseVisualStyleBackColor = false;
+            button_print.Click += button_print_Click;
             // 
             // button_clear_MangeStudent
             // 
@@ -309,7 +311,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 71, 160);
-            label1.Location = new Point(661, 66);
+            label1.Location = new Point(555, 66);
             label1.Name = "label1";
             label1.Size = new Size(113, 18);
             label1.TabIndex = 34;
@@ -318,16 +320,31 @@
             // comboBox_class
             // 
             comboBox_class.FormattingEnabled = true;
-            comboBox_class.Location = new Point(780, 64);
+            comboBox_class.Location = new Point(674, 64);
             comboBox_class.Name = "comboBox_class";
             comboBox_class.Size = new Size(142, 23);
             comboBox_class.TabIndex = 35;
+            // 
+            // button_search
+            // 
+            button_search.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_search.BackColor = Color.FromArgb(0, 71, 160);
+            button_search.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            button_search.ForeColor = Color.White;
+            button_search.Location = new Point(822, 61);
+            button_search.Name = "button_search";
+            button_search.Size = new Size(109, 28);
+            button_search.TabIndex = 36;
+            button_search.Text = "Search";
+            button_search.UseVisualStyleBackColor = false;
+            button_search.Click += button_search_Click;
             // 
             // PrintStudent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(934, 613);
+            Controls.Add(button_search);
             Controls.Add(comboBox_class);
             Controls.Add(label1);
             Controls.Add(panel3);
@@ -369,5 +386,6 @@
         private Label label1;
         private ComboBox comboBox_class;
         private RadioButton radioButton_all;
+        private Button button_search;
     }
 }
