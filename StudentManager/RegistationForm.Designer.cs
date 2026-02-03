@@ -33,27 +33,27 @@
             textBox_firstName = new TextBox();
             textBox_lastName = new TextBox();
             label2 = new Label();
-            label3 = new Label();
-            dateTimePicker_DOB = new DateTimePicker();
-            label4 = new Label();
-            radioButton_male = new RadioButton();
-            radioButton_female = new RadioButton();
             textBox_address = new TextBox();
             label5 = new Label();
-            pictureBox_student = new PictureBox();
-            button_upload = new Button();
-            textBox_phoneNumber = new TextBox();
-            label6 = new Label();
             button_add = new Button();
             button_clear = new Button();
             panel1 = new Panel();
             label7 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
+            label6 = new Label();
+            textBox_phoneNumber = new TextBox();
+            button_upload = new Button();
+            radioButton_female = new RadioButton();
+            pictureBox_student = new PictureBox();
+            radioButton_male = new RadioButton();
+            label4 = new Label();
+            dateTimePicker_DOB = new DateTimePicker();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView_student).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_student).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_student).BeginInit();
             SuspendLayout();
             // 
             // dataGridView_student
@@ -104,61 +104,6 @@
             label2.TabIndex = 4;
             label2.Text = "Last Name :";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(0, 71, 160);
-            label3.Location = new Point(20, 83);
-            label3.Name = "label3";
-            label3.Size = new Size(116, 18);
-            label3.TabIndex = 6;
-            label3.Text = "Date Of Birth :";
-            // 
-            // dateTimePicker_DOB
-            // 
-            dateTimePicker_DOB.Location = new Point(142, 81);
-            dateTimePicker_DOB.Name = "dateTimePicker_DOB";
-            dateTimePicker_DOB.Size = new Size(206, 23);
-            dateTimePicker_DOB.TabIndex = 7;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(0, 71, 160);
-            label4.Location = new Point(547, 83);
-            label4.Name = "label4";
-            label4.Size = new Size(73, 18);
-            label4.TabIndex = 8;
-            label4.Text = "Gender :";
-            // 
-            // radioButton_male
-            // 
-            radioButton_male.AutoSize = true;
-            radioButton_male.Checked = true;
-            radioButton_male.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
-            radioButton_male.ForeColor = Color.FromArgb(0, 71, 160);
-            radioButton_male.Location = new Point(626, 83);
-            radioButton_male.Name = "radioButton_male";
-            radioButton_male.Size = new Size(59, 20);
-            radioButton_male.TabIndex = 9;
-            radioButton_male.TabStop = true;
-            radioButton_male.Text = "Male";
-            radioButton_male.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_female
-            // 
-            radioButton_female.AutoSize = true;
-            radioButton_female.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
-            radioButton_female.ForeColor = Color.FromArgb(0, 71, 160);
-            radioButton_female.Location = new Point(691, 83);
-            radioButton_female.Name = "radioButton_female";
-            radioButton_female.Size = new Size(77, 20);
-            radioButton_female.TabIndex = 10;
-            radioButton_female.Text = "Female";
-            radioButton_female.UseVisualStyleBackColor = true;
-            // 
             // textBox_address
             // 
             textBox_address.Location = new Point(142, 130);
@@ -177,49 +122,6 @@
             label5.Size = new Size(79, 18);
             label5.TabIndex = 11;
             label5.Text = "Address :";
-            // 
-            // pictureBox_student
-            // 
-            pictureBox_student.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            pictureBox_student.BackColor = Color.Gainsboro;
-            pictureBox_student.Location = new Point(812, 29);
-            pictureBox_student.Name = "pictureBox_student";
-            pictureBox_student.Size = new Size(109, 121);
-            pictureBox_student.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox_student.TabIndex = 13;
-            pictureBox_student.TabStop = false;
-            // 
-            // button_upload
-            // 
-            button_upload.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button_upload.BackColor = Color.FromArgb(0, 71, 160);
-            button_upload.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            button_upload.ForeColor = Color.White;
-            button_upload.Location = new Point(812, 164);
-            button_upload.Name = "button_upload";
-            button_upload.Size = new Size(109, 28);
-            button_upload.TabIndex = 14;
-            button_upload.Text = "Upload";
-            button_upload.UseVisualStyleBackColor = false;
-            button_upload.Click += button_upload_Click;
-            // 
-            // textBox_phoneNumber
-            // 
-            textBox_phoneNumber.Location = new Point(610, 29);
-            textBox_phoneNumber.Name = "textBox_phoneNumber";
-            textBox_phoneNumber.Size = new Size(158, 23);
-            textBox_phoneNumber.TabIndex = 16;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(0, 71, 160);
-            label6.Location = new Point(534, 31);
-            label6.Name = "label6";
-            label6.Size = new Size(66, 18);
-            label6.TabIndex = 15;
-            label6.Text = "Phone :";
             // 
             // button_add
             // 
@@ -305,6 +207,104 @@
             panel3.Size = new Size(934, 261);
             panel3.TabIndex = 21;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(0, 71, 160);
+            label6.Location = new Point(534, 31);
+            label6.Name = "label6";
+            label6.Size = new Size(66, 18);
+            label6.TabIndex = 15;
+            label6.Text = "Phone :";
+            // 
+            // textBox_phoneNumber
+            // 
+            textBox_phoneNumber.Location = new Point(610, 29);
+            textBox_phoneNumber.Name = "textBox_phoneNumber";
+            textBox_phoneNumber.Size = new Size(158, 23);
+            textBox_phoneNumber.TabIndex = 16;
+            // 
+            // button_upload
+            // 
+            button_upload.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_upload.BackColor = Color.FromArgb(0, 71, 160);
+            button_upload.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            button_upload.ForeColor = Color.White;
+            button_upload.Location = new Point(812, 164);
+            button_upload.Name = "button_upload";
+            button_upload.Size = new Size(109, 28);
+            button_upload.TabIndex = 14;
+            button_upload.Text = "Upload";
+            button_upload.UseVisualStyleBackColor = false;
+            button_upload.Click += button_upload_Click;
+            // 
+            // radioButton_female
+            // 
+            radioButton_female.AutoSize = true;
+            radioButton_female.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            radioButton_female.ForeColor = Color.FromArgb(0, 71, 160);
+            radioButton_female.Location = new Point(691, 83);
+            radioButton_female.Name = "radioButton_female";
+            radioButton_female.Size = new Size(77, 20);
+            radioButton_female.TabIndex = 10;
+            radioButton_female.Text = "Female";
+            radioButton_female.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox_student
+            // 
+            pictureBox_student.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox_student.BackColor = Color.Gainsboro;
+            pictureBox_student.Location = new Point(812, 29);
+            pictureBox_student.Name = "pictureBox_student";
+            pictureBox_student.Size = new Size(109, 121);
+            pictureBox_student.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_student.TabIndex = 13;
+            pictureBox_student.TabStop = false;
+            // 
+            // radioButton_male
+            // 
+            radioButton_male.AutoSize = true;
+            radioButton_male.Checked = true;
+            radioButton_male.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            radioButton_male.ForeColor = Color.FromArgb(0, 71, 160);
+            radioButton_male.Location = new Point(626, 83);
+            radioButton_male.Name = "radioButton_male";
+            radioButton_male.Size = new Size(59, 20);
+            radioButton_male.TabIndex = 9;
+            radioButton_male.TabStop = true;
+            radioButton_male.Text = "Male";
+            radioButton_male.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(0, 71, 160);
+            label4.Location = new Point(547, 83);
+            label4.Name = "label4";
+            label4.Size = new Size(73, 18);
+            label4.TabIndex = 8;
+            label4.Text = "Gender :";
+            // 
+            // dateTimePicker_DOB
+            // 
+            dateTimePicker_DOB.Location = new Point(142, 81);
+            dateTimePicker_DOB.Name = "dateTimePicker_DOB";
+            dateTimePicker_DOB.Size = new Size(206, 23);
+            dateTimePicker_DOB.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(0, 71, 160);
+            label3.Location = new Point(20, 83);
+            label3.Name = "label3";
+            label3.Size = new Size(116, 18);
+            label3.TabIndex = 6;
+            label3.Text = "Date Of Birth :";
+            // 
             // RegistationForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -319,11 +319,11 @@
             Text = "RegistationForm";
             Load += RegistationForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_student).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_student).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_student).EndInit();
             ResumeLayout(false);
         }
 
@@ -334,22 +334,22 @@
         private TextBox textBox_firstName;
         private TextBox textBox_lastName;
         private Label label2;
-        private Label label3;
-        private DateTimePicker dateTimePicker_DOB;
-        private Label label4;
-        private RadioButton radioButton_male;
-        private RadioButton radioButton_female;
         private TextBox textBox_address;
         private Label label5;
-        private PictureBox pictureBox_student;
-        private Button button_upload;
-        private TextBox textBox_phoneNumber;
-        private Label label6;
         private Button button_add;
         private Button button_clear;
         private Panel panel1;
         private Label label7;
         private Panel panel2;
         private Panel panel3;
+        private Label label3;
+        private TextBox textBox_phoneNumber;
+        private DateTimePicker dateTimePicker_DOB;
+        private Label label6;
+        private Label label4;
+        private Button button_upload;
+        private RadioButton radioButton_male;
+        private PictureBox pictureBox_student;
+        private RadioButton radioButton_female;
     }
 }

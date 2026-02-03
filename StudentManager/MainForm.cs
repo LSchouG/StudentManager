@@ -110,12 +110,14 @@ namespace StudentManager
         private void button_addCourse_Click(object sender, EventArgs e)
         {
             //TODO
+            openChildForm(new CourseForm());
             hideSubMenu();
         }
 
         private void button_manageCourse_Click(object sender, EventArgs e)
         {
             //TODO
+            openChildForm(new ManageCourseForm());
             hideSubMenu();
         }
 
