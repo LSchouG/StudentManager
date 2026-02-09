@@ -53,6 +53,18 @@ namespace StudentManager
 
             return table;
         }
+        // Function to insert courses to table
+        public DataTable getCourseListByCommand(MySqlCommand command)
+        {
+            command.Connection = DBconnect.getConnection;
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+
+            return table;
+        }
 
         public bool UpdateCourse(int id, string courseName, int courseHour, string courseDescription)
         {
@@ -87,7 +99,7 @@ namespace StudentManager
         // function to delete course by id
         public bool DeleteCourse(int id)
         {
-            MySqlCommand command = new MySqlCommand("DELETE FROM `course` WHERE CourseId`= @id", DBconnect.getConnection);
+            MySqlCommand command = new MySqlCommand("DELETE FROM `course` WHERE `CourseId` = @id", DBconnect.getConnection);
 
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
             DBconnect.openConnection();
