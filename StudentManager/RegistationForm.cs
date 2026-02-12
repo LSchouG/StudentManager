@@ -44,7 +44,7 @@ namespace StudentManager
             }
             else
             {
-                gender = "female";
+                gender = "Female";
             }
             MemoryStream image = new MemoryStream();
             pictureBox_student.Image.Save(image, pictureBox_student.Image.RawFormat);

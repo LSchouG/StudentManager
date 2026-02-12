@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DGVPrinterHelper;
+using Microsoft.VisualBasic.Devices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +8,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using DGVPrinterHelper;
 
 
 namespace StudentManager
@@ -15,6 +16,7 @@ namespace StudentManager
     {
         StudentClass student = new StudentClass();
         DGVPrinter printer = new DGVPrinter();
+        CourseClass course = new CourseClass();
         public PrintStudent()
         {
             InitializeComponent();
@@ -23,8 +25,30 @@ namespace StudentManager
         private void PrintStudent_Load(object sender, EventArgs e)
         {
             showData(new MySqlCommand("SELECT * FROM `student`"));
+            showCombobox();
         }
+        // funtion to display the combobox items
+        private void showCombobox()
+        {
+            // populate the combobox with courses name
+            DataTable table = course.getCourseList();
 
+            // Create new row for all
+            DataRow row = table.NewRow();
+            row["CourseId"] = 0;
+            row["CourseName"] = "All";
+
+            // Insert at top
+            table.Rows.InsertAt(row, 0);
+
+            comboBox_class.DataSource = table;
+            comboBox_class.DisplayMember = "CourseName";
+            comboBox_class.ValueMember = "CourseId";
+
+            // Select "All" by default
+            comboBox_class.SelectedIndex = 0;
+
+        }
         // function to display the datagridview
         public void showData(MySqlCommand command)
         {
@@ -88,22 +112,37 @@ namespace StudentManager
 
         private void button_search_Click(object sender, EventArgs e)
         {
-            // CheckBox the radio button
-            String selectQuery = "";
-            if (radioButton_all.Checked)
-            {
-                selectQuery = "SELECT * FROM `student`";
-            }
-            if (radioButton_female.Checked)
-            {
-                selectQuery = "SELECT * FROM student WHERE StdGender = 'Female'";
-            }
+            string selectQuery = "SELECT * FROM `student`";
+
+            // Gender filter
             if (radioButton_male.Checked)
+                selectQuery += " WHERE StdGender = 'Male'";
+            else if (radioButton_female.Checked)
+                selectQuery += " WHERE StdGender = 'Female'";
+
+            // Optional: filter by course
+            string course = comboBox_class.Text;
+            if (course != "All")
             {
-                selectQuery = "SELECT * FROM student WHERE StdGender = 'Male'";
+                if (selectQuery.Contains("WHERE"))
+                    selectQuery += " AND StdCourse = @course";
+                else
+                    selectQuery += " WHERE StdCourse = @course";
             }
-            showData(new MySqlCommand(selectQuery));
+
+            MySqlCommand command = new MySqlCommand(selectQuery);
+
+            if (course != "All")
+            {
+                command.Parameters.Add("@course", MySqlDbType.VarChar).Value = course;
+            }
+
+
+            showData(command);
         }
+
+
+
         private void button_print_Click(object sender, EventArgs e)
         {
             // Hide image column (CRITICAL)

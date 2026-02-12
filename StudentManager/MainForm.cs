@@ -143,6 +143,7 @@ namespace StudentManager
         }
         private void button_manageScore_Click(object sender, EventArgs e)
         {
+            openChildForm(new ManageScoreForm());
             // TODO
             hideSubMenu();
         }
@@ -177,5 +178,11 @@ namespace StudentManager
             childForm.Show();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //TODO
+            openChildForm(new PrintScoreForm());
+            hideSubMenu();
+        }
     }
 }

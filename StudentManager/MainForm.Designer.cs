@@ -139,6 +139,7 @@
             button7.Text = "Print";
             button7.TextAlign = ContentAlignment.MiddleLeft;
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button_manageScore
             // 

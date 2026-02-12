@@ -52,6 +52,20 @@ namespace StudentManager
 
             return table;
         }
+        // Get total, male, andc female students count
+        // function to get count
+        public string exeQuery(MySqlCommand command)
+        {
+            command.Connection = DBconnect.getConnection;
+
+            DBconnect.openConnection();
+
+            object result = command.ExecuteScalar();
+
+            DBconnect.closeConnection();
+
+            return result?.ToString() ?? "";
+        }
 
         // Get total, male, andc female students count
         // function to get count
