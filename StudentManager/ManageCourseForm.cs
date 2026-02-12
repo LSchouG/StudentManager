@@ -128,7 +128,7 @@ namespace StudentManager
             string courseName = textBox_courseName.Text;
             if (string.IsNullOrWhiteSpace(textBox_courseId.Text))
             {
-                MessageBox.Show("Select a student to delete", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Select a course to delete", "Delete Course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

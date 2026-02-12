@@ -124,6 +124,7 @@ namespace StudentManager
         private void button_coursePrint_Click(object sender, EventArgs e)
         {
             //TODO
+            openChildForm(new PrintCourseForm());
             hideSubMenu();
         }
         #endregion
@@ -137,11 +138,12 @@ namespace StudentManager
         #region subMenuScore
         private void button_addScore_Click(object sender, EventArgs e)
         {
-            // TODO
+            openChildForm(new NewScoreForm());
             hideSubMenu();
         }
         private void button_manageScore_Click(object sender, EventArgs e)
         {
+            openChildForm(new ManageScoreForm());
             // TODO
             hideSubMenu();
         }
@@ -176,5 +178,11 @@ namespace StudentManager
             childForm.Show();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //TODO
+            openChildForm(new PrintScoreForm());
+            hideSubMenu();
+        }
     }
 }

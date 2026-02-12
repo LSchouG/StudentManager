@@ -1,6 +1,6 @@
 ﻿namespace StudentManager
 {
-    partial class PrintStudent
+    partial class PrintCourseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            button_search = new Button();
             panel3 = new Panel();
+            button1 = new Button();
             radioButton_all = new RadioButton();
             button_print = new Button();
             button_clear_MangeStudent = new Button();
@@ -46,27 +48,38 @@
             radioButton_female = new RadioButton();
             panel1 = new Panel();
             label7 = new Label();
-            dataGridView_student = new DataGridView();
-            label1 = new Label();
-            comboBox_class = new ComboBox();
-            button_search = new Button();
+            dataGridView_course = new DataGridView();
+            textBox_courseSearchBox = new TextBox();
+            radioButton_StudentId = new RadioButton();
+            radioButton_hours = new RadioButton();
+            radioButton_description = new RadioButton();
+            radioButton_name = new RadioButton();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_studentMG).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_student).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_student).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_course).BeginInit();
             SuspendLayout();
+            // 
+            // button_search
+            // 
+            button_search.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_search.BackColor = Color.FromArgb(0, 71, 160);
+            button_search.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            button_search.ForeColor = Color.White;
+            button_search.Location = new Point(813, 60);
+            button_search.Name = "button_search";
+            button_search.Size = new Size(109, 28);
+            button_search.TabIndex = 42;
+            button_search.Text = "Search";
+            button_search.UseVisualStyleBackColor = false;
+            button_search.Click += button_search_Click;
             // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel3.Controls.Add(button_search);
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(radioButton_all);
-            panel3.Controls.Add(comboBox_class);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(radioButton_male);
-            panel3.Controls.Add(radioButton_female);
             panel3.Controls.Add(button_print);
             panel3.Controls.Add(button_clear_MangeStudent);
             panel3.Controls.Add(button_delete);
@@ -76,12 +89,29 @@
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(button_clear);
             panel3.Controls.Add(button_add);
+            panel3.Controls.Add(label4);
             panel3.Controls.Add(button_upload);
+            panel3.Controls.Add(radioButton_male);
             panel3.Controls.Add(pictureBox_student);
+            panel3.Controls.Add(radioButton_female);
             panel3.Location = new Point(0, 562);
             panel3.Name = "panel3";
             panel3.Size = new Size(934, 51);
-            panel3.TabIndex = 31;
+            panel3.TabIndex = 39;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(0, 71, 160);
+            button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(813, 16);
+            button1.Name = "button1";
+            button1.Size = new Size(109, 28);
+            button1.TabIndex = 39;
+            button1.Text = "Print";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // radioButton_all
             // 
@@ -90,7 +120,7 @@
             radioButton_all.Checked = true;
             radioButton_all.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             radioButton_all.ForeColor = Color.FromArgb(0, 71, 160);
-            radioButton_all.Location = new Point(99, 20);
+            radioButton_all.Location = new Point(99, -29);
             radioButton_all.Name = "radioButton_all";
             radioButton_all.Size = new Size(43, 20);
             radioButton_all.TabIndex = 35;
@@ -104,13 +134,12 @@
             button_print.BackColor = Color.FromArgb(0, 71, 160);
             button_print.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_print.ForeColor = Color.White;
-            button_print.Location = new Point(813, 16);
+            button_print.Location = new Point(1547, -33);
             button_print.Name = "button_print";
             button_print.Size = new Size(109, 28);
             button_print.TabIndex = 34;
             button_print.Text = "Print";
             button_print.UseVisualStyleBackColor = false;
-            button_print.Click += button_print_Click;
             // 
             // button_clear_MangeStudent
             // 
@@ -118,7 +147,7 @@
             button_clear_MangeStudent.BackColor = Color.Gray;
             button_clear_MangeStudent.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_clear_MangeStudent.ForeColor = Color.White;
-            button_clear_MangeStudent.Location = new Point(1310, 172);
+            button_clear_MangeStudent.Location = new Point(2044, 123);
             button_clear_MangeStudent.Name = "button_clear_MangeStudent";
             button_clear_MangeStudent.Size = new Size(109, 28);
             button_clear_MangeStudent.TabIndex = 25;
@@ -131,7 +160,7 @@
             button_delete.BackColor = Color.Red;
             button_delete.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_delete.ForeColor = Color.White;
-            button_delete.Location = new Point(1422, 172);
+            button_delete.Location = new Point(2156, 123);
             button_delete.Name = "button_delete";
             button_delete.Size = new Size(109, 28);
             button_delete.TabIndex = 24;
@@ -144,7 +173,7 @@
             button_Update.BackColor = Color.Green;
             button_Update.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_Update.ForeColor = Color.White;
-            button_Update.Location = new Point(1537, 172);
+            button_Update.Location = new Point(2271, 123);
             button_Update.Name = "button_Update";
             button_Update.Size = new Size(109, 28);
             button_Update.TabIndex = 23;
@@ -157,7 +186,7 @@
             button_uploadMG.BackColor = Color.FromArgb(0, 71, 160);
             button_uploadMG.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_uploadMG.ForeColor = Color.White;
-            button_uploadMG.Location = new Point(1537, 117);
+            button_uploadMG.Location = new Point(2271, 68);
             button_uploadMG.Name = "button_uploadMG";
             button_uploadMG.Size = new Size(109, 28);
             button_uploadMG.TabIndex = 22;
@@ -168,7 +197,7 @@
             // 
             pictureBox_studentMG.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox_studentMG.BackColor = Color.Gainsboro;
-            pictureBox_studentMG.Location = new Point(1537, -18);
+            pictureBox_studentMG.Location = new Point(2271, -67);
             pictureBox_studentMG.Name = "pictureBox_studentMG";
             pictureBox_studentMG.Size = new Size(109, 121);
             pictureBox_studentMG.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -190,7 +219,7 @@
             button_clear.BackColor = Color.Silver;
             button_clear.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_clear.ForeColor = Color.White;
-            button_clear.Location = new Point(2165, 331);
+            button_clear.Location = new Point(2899, 282);
             button_clear.Name = "button_clear";
             button_clear.Size = new Size(109, 28);
             button_clear.TabIndex = 18;
@@ -203,7 +232,7 @@
             button_add.BackColor = Color.Green;
             button_add.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_add.ForeColor = Color.White;
-            button_add.Location = new Point(2280, 331);
+            button_add.Location = new Point(3014, 282);
             button_add.Name = "button_add";
             button_add.Size = new Size(109, 28);
             button_add.TabIndex = 17;
@@ -216,7 +245,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 71, 160);
-            label4.Location = new Point(18, 21);
+            label4.Location = new Point(18, -28);
             label4.Name = "label4";
             label4.Size = new Size(73, 18);
             label4.TabIndex = 8;
@@ -228,7 +257,7 @@
             button_upload.BackColor = Color.FromArgb(0, 71, 160);
             button_upload.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
             button_upload.ForeColor = Color.White;
-            button_upload.Location = new Point(2280, 276);
+            button_upload.Location = new Point(3014, 227);
             button_upload.Name = "button_upload";
             button_upload.Size = new Size(109, 28);
             button_upload.TabIndex = 14;
@@ -241,7 +270,7 @@
             radioButton_male.AutoSize = true;
             radioButton_male.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             radioButton_male.ForeColor = Color.FromArgb(0, 71, 160);
-            radioButton_male.Location = new Point(148, 20);
+            radioButton_male.Location = new Point(148, -29);
             radioButton_male.Name = "radioButton_male";
             radioButton_male.Size = new Size(59, 20);
             radioButton_male.TabIndex = 9;
@@ -252,7 +281,7 @@
             // 
             pictureBox_student.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox_student.BackColor = Color.Gainsboro;
-            pictureBox_student.Location = new Point(2280, 141);
+            pictureBox_student.Location = new Point(3014, 92);
             pictureBox_student.Name = "pictureBox_student";
             pictureBox_student.Size = new Size(109, 121);
             pictureBox_student.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -265,7 +294,7 @@
             radioButton_female.AutoSize = true;
             radioButton_female.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             radioButton_female.ForeColor = Color.FromArgb(0, 71, 160);
-            radioButton_female.Location = new Point(213, 20);
+            radioButton_female.Location = new Point(213, -29);
             radioButton_female.Name = "radioButton_female";
             radioButton_female.Size = new Size(77, 20);
             radioButton_female.TabIndex = 10;
@@ -280,7 +309,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(934, 58);
-            panel1.TabIndex = 30;
+            panel1.TabIndex = 38;
             // 
             // label7
             // 
@@ -293,75 +322,112 @@
             label7.TabIndex = 20;
             label7.Text = "To Print";
             // 
-            // dataGridView_student
+            // dataGridView_course
             // 
-            dataGridView_student.AllowUserToAddRows = false;
-            dataGridView_student.AllowUserToDeleteRows = false;
-            dataGridView_student.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView_student.BackgroundColor = Color.Gainsboro;
-            dataGridView_student.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_student.Location = new Point(0, 90);
-            dataGridView_student.Name = "dataGridView_student";
-            dataGridView_student.Size = new Size(934, 480);
-            dataGridView_student.TabIndex = 29;
+            dataGridView_course.AllowUserToAddRows = false;
+            dataGridView_course.AllowUserToDeleteRows = false;
+            dataGridView_course.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView_course.BackgroundColor = Color.Gainsboro;
+            dataGridView_course.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_course.Location = new Point(0, 90);
+            dataGridView_course.Name = "dataGridView_course";
+            dataGridView_course.Size = new Size(934, 480);
+            dataGridView_course.TabIndex = 37;
             // 
-            // label1
+            // textBox_courseSearchBox
             // 
-            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(0, 71, 160);
-            label1.Location = new Point(296, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 18);
-            label1.TabIndex = 34;
-            label1.Text = "Select Class :";
+            textBox_courseSearchBox.Location = new Point(687, 63);
+            textBox_courseSearchBox.Name = "textBox_courseSearchBox";
+            textBox_courseSearchBox.Size = new Size(126, 23);
+            textBox_courseSearchBox.TabIndex = 43;
             // 
-            // comboBox_class
+            // radioButton_StudentId
             // 
-            comboBox_class.FormattingEnabled = true;
-            comboBox_class.Location = new Point(415, 19);
-            comboBox_class.Name = "comboBox_class";
-            comboBox_class.Size = new Size(142, 23);
-            comboBox_class.TabIndex = 35;
+            radioButton_StudentId.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            radioButton_StudentId.AutoSize = true;
+            radioButton_StudentId.Checked = true;
+            radioButton_StudentId.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            radioButton_StudentId.ForeColor = Color.FromArgb(0, 71, 160);
+            radioButton_StudentId.Location = new Point(411, 64);
+            radioButton_StudentId.Name = "radioButton_StudentId";
+            radioButton_StudentId.Size = new Size(40, 20);
+            radioButton_StudentId.TabIndex = 47;
+            radioButton_StudentId.TabStop = true;
+            radioButton_StudentId.Text = "ID";
+            radioButton_StudentId.UseVisualStyleBackColor = true;
             // 
-            // button_search
+            // radioButton_hours
             // 
-            button_search.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button_search.BackColor = Color.FromArgb(0, 71, 160);
-            button_search.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            button_search.ForeColor = Color.White;
-            button_search.Location = new Point(563, 16);
-            button_search.Name = "button_search";
-            button_search.Size = new Size(109, 28);
-            button_search.TabIndex = 36;
-            button_search.Text = "Search";
-            button_search.UseVisualStyleBackColor = false;
-            button_search.Click += button_search_Click;
+            radioButton_hours.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            radioButton_hours.AutoSize = true;
+            radioButton_hours.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            radioButton_hours.ForeColor = Color.FromArgb(0, 71, 160);
+            radioButton_hours.Location = new Point(517, 64);
+            radioButton_hours.Name = "radioButton_hours";
+            radioButton_hours.Size = new Size(66, 20);
+            radioButton_hours.TabIndex = 45;
+            radioButton_hours.Text = "Hours";
+            radioButton_hours.UseVisualStyleBackColor = true;
             // 
-            // PrintStudent
+            // radioButton_description
+            // 
+            radioButton_description.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            radioButton_description.AutoSize = true;
+            radioButton_description.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            radioButton_description.ForeColor = Color.FromArgb(0, 71, 160);
+            radioButton_description.Location = new Point(583, 64);
+            radioButton_description.Name = "radioButton_description";
+            radioButton_description.Size = new Size(104, 20);
+            radioButton_description.TabIndex = 46;
+            radioButton_description.Text = "Description";
+            radioButton_description.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_name
+            // 
+            radioButton_name.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            radioButton_name.AutoSize = true;
+            radioButton_name.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            radioButton_name.ForeColor = Color.FromArgb(0, 71, 160);
+            radioButton_name.Location = new Point(451, 64);
+            radioButton_name.Name = "radioButton_name";
+            radioButton_name.Size = new Size(66, 20);
+            radioButton_name.TabIndex = 48;
+            radioButton_name.Text = "Name";
+            radioButton_name.UseVisualStyleBackColor = true;
+            // 
+            // PrintCourseForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(934, 613);
+            Controls.Add(radioButton_name);
+            Controls.Add(radioButton_StudentId);
+            Controls.Add(radioButton_hours);
+            Controls.Add(radioButton_description);
+            Controls.Add(textBox_courseSearchBox);
+            Controls.Add(button_search);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Controls.Add(dataGridView_student);
-            Name = "PrintStudent";
-            Text = "PrintStudent";
-            Load += PrintStudent_Load;
+            Controls.Add(dataGridView_course);
+            Name = "PrintCourseForm";
+            Text = "PrintCourseForm";
+            Load += PrintCourseForm_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_studentMG).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_student).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_student).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_course).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button button_search;
         private Panel panel3;
+        private RadioButton radioButton_all;
         private Button button_print;
         private Button button_clear_MangeStudent;
         private Button button_delete;
@@ -378,10 +444,12 @@
         private RadioButton radioButton_female;
         private Panel panel1;
         private Label label7;
-        private DataGridView dataGridView_student;
-        private Label label1;
-        private ComboBox comboBox_class;
-        private RadioButton radioButton_all;
-        private Button button_search;
+        private DataGridView dataGridView_course;
+        private Button button1;
+        private TextBox textBox_courseSearchBox;
+        private RadioButton radioButton_StudentId;
+        private RadioButton radioButton_hours;
+        private RadioButton radioButton_description;
+        private RadioButton radioButton_name;
     }
 }
