@@ -157,8 +157,18 @@ namespace StudentManager
         // Exit Button
         private void button_Exit_Click(object sender, EventArgs e)
         {
-            // TODO
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Exit",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
+
 
         #endregion
 
