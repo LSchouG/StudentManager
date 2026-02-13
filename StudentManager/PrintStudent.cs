@@ -112,34 +112,49 @@ namespace StudentManager
 
         private void button_search_Click(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT * FROM `student`";
+            string query =
+                "SELECT DISTINCT student.*, course.CourseName " +
+                "FROM student " +
+                "INNER JOIN score ON student.StdId = score.StudentID " +
+                "INNER JOIN course ON score.CourseName = course.CourseName ";
+
+            List<string> conditions = new List<string>();
+            MySqlCommand command = new MySqlCommand();
 
             // Gender filter
             if (radioButton_male.Checked)
-                selectQuery += " WHERE StdGender = 'Male'";
+            {
+                query += " WHERE student.StdGender = @gender";
+                command.Parameters.Add("@gender", MySqlDbType.VarChar).Value = "Male";
+            }
             else if (radioButton_female.Checked)
-                selectQuery += " WHERE StdGender = 'Female'";
-
-            // Optional: filter by course
-            string course = comboBox_class.Text;
-            if (course != "All")
             {
-                if (selectQuery.Contains("WHERE"))
-                    selectQuery += " AND StdCourse = @course";
-                else
-                    selectQuery += " WHERE StdCourse = @course";
+                query += " WHERE student.StdGender = @gender";
+                command.Parameters.Add("@gender", MySqlDbType.VarChar).Value = "Female";
             }
 
-            MySqlCommand command = new MySqlCommand(selectQuery);
-
-            if (course != "All")
+            // Course filter
+            if (comboBox_class.Text != "All")
             {
-                command.Parameters.Add("@course", MySqlDbType.VarChar).Value = course;
+                if (radioButton_male.Checked || radioButton_female.Checked)
+                {
+                    query += " AND ";
+                }
+                else 
+                {
+                    query += " WHERE ";
+                }
+                query += " course.CourseName = @course";
+                command.Parameters.Add("@course", MySqlDbType.VarChar).Value = comboBox_class.Text;
             }
 
+            command.CommandText = query;
+
+            System.Diagnostics.Debug.WriteLine(query);
 
             showData(command);
         }
+
 
 
 
